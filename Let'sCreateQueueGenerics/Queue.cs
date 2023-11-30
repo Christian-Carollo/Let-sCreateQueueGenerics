@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Let_sCreateQueueGenerics
 {
-    internal class MyQueue<T>
+    public class MyQueue<T>
     {
         Queue<T> queueList = new Queue<T>();
 
@@ -40,6 +40,13 @@ namespace Let_sCreateQueueGenerics
             {
                 Console.WriteLine("The queueList is Empty");
             }
+        }
+
+
+        public int Count()
+        {
+            return queueList.Count();
+
         }
 
     }
