@@ -25,7 +25,16 @@ namespace Let_sCreateQueueGenerics
 
         public void Peek()
         {
-            Console.WriteLine(queueList.Count > 0 ? $"Element Peek: {queueList.Peek()}" : "The queueList is Empty");
+
+            if (queueList.Count > 0)
+            {
+                Console.WriteLine("Elements Peek:\n");
+                queueList.Select(q => q).ToList().ForEach(q => Console.WriteLine(q));
+            }
+            else
+            {
+                Console.WriteLine("The queueList is Empty");
+            }
         }
         
        
