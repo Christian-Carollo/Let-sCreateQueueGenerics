@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Let_sCreateQueueGenerics
 {
-    public class MyQueue<T> : AbstractMyQueue<T> 
+    public class MyQueue<T> : AbstractMyQueue<T>
     {
-       
-
+      
     }
 }

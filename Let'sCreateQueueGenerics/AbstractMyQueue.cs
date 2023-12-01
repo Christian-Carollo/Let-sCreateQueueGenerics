@@ -9,7 +9,9 @@ namespace Let_sCreateQueueGenerics
 {
     public abstract class AbstractMyQueue<T>
     {
-        Queue<T> queueList = new Queue<T>();
+        private Queue<T> queueList = new Queue<T>();
+
+        public Queue<T> GetQueue() { return queueList; }
 
         public void Enqueue(T element)
         {
@@ -19,7 +21,7 @@ namespace Let_sCreateQueueGenerics
 
         public void Dequeue()
         {
-            if (queueList.Count > 0) { queueList.Dequeue(); } else { throw new InvalidOperationException("The queueList is Empty");}
+            if (queueList.Count > 0) { queueList.Dequeue(); } else { throw new InvalidOperationException("The queueList is Empty"); }
         }
 
         public T Peek()
@@ -46,15 +48,15 @@ namespace Let_sCreateQueueGenerics
             }
             else
             {
-                throw new InvalidOperationException("The queueList is Empty");
+                Console.WriteLine("The queueList is Empty");
             }
         }
 
 
-        public int Count()
+        public virtual int Count()
         {
             return queueList.Count;
-
         }
-   }
+
+    }
 }
