@@ -20,20 +20,20 @@ namespace Let_sCreateQueueGenerics
 
         public void Dequeue()
         {
-            if(queueList.Count > 0) { queueList.Dequeue(); } else { Console.WriteLine("The queueList is Empty");}
+            if(queueList.Count > 0) { queueList.Dequeue(); } else { throw new InvalidOperationException("The queueList is Empty"); ; }
         }
 
-        public void Peek()
+        public T Peek()
         {
 
             if (queueList.Count > 0)
             {
                 Console.WriteLine("Elements Peek:\n");
-                queueList.Select(q => q).ToList().ForEach(q => Console.WriteLine(q));
+                return queueList.Peek();
             }
             else
             {
-                Console.WriteLine("The queueList is Empty");
+                throw new InvalidOperationException("The queueList is Empty");
             }
         }
         
@@ -54,7 +54,7 @@ namespace Let_sCreateQueueGenerics
 
         public int Count()
         {
-            return queueList.Count();
+            return queueList.Count;
 
         }
 
