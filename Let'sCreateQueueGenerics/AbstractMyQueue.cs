@@ -1,5 +1,4 @@
-﻿
-using NPOI.SS.Formula.Functions;
+﻿using NPOI.SS.Formula.Functions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace Let_sCreateQueueGenerics
 {
-    public class MyQueue<T>
+    public abstract class AbstractMyQueue<T>
     {
         Queue<T> queueList = new Queue<T>();
 
         public void Enqueue(T element)
         {
             queueList.Enqueue(element);
-            
+
         }
 
         public void Dequeue()
         {
-            if(queueList.Count > 0) { queueList.Dequeue(); } else { throw new InvalidOperationException("The queueList is Empty"); ; }
+            if (queueList.Count > 0) { queueList.Dequeue(); } else { throw new InvalidOperationException("The queueList is Empty");}
         }
 
         public T Peek()
@@ -36,18 +35,18 @@ namespace Let_sCreateQueueGenerics
                 throw new InvalidOperationException("The queueList is Empty");
             }
         }
-        
-       
+
+
         public void Print()
         {
-            if(queueList.Count > 0)
+            if (queueList.Count > 0)
             {
                 Console.WriteLine("Elements in QueueList:\n");
-                queueList.Select(q=>q).ToList().ForEach(q=> Console.WriteLine(q));
+                queueList.Select(q => q).ToList().ForEach(q => Console.WriteLine(q));
             }
             else
             {
-                Console.WriteLine("The queueList is Empty");
+                throw new InvalidOperationException("The queueList is Empty");
             }
         }
 
@@ -57,6 +56,5 @@ namespace Let_sCreateQueueGenerics
             return queueList.Count;
 
         }
-
-    }
+   }
 }
