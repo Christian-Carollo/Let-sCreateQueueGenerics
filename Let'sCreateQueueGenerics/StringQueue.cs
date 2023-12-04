@@ -8,17 +8,22 @@ namespace Let_sCreateQueueGenerics
 {
     public class StringQueue : MyQueue<string>
     {
+        public StringQueue(ILogger logger) : base(logger)
+        {
+        }
 
         public override void Print()
         {
             if (queueList.Count > 0)
             {
-                Console.WriteLine("Elements in StringQueueList:\n");
-                queueList.Select(q => q).ToList().ForEach(q => Console.WriteLine(q));
+
+                logger.Log("Elements in StringQueueList:\n");
+                queueList.ToList().ForEach(q => logger.Log(q.ToString()));
+
             }
             else
             {
-                Console.WriteLine("The queueList is Empty");
+                logger.Log("The queueList is Empty");
             }
         }
     }

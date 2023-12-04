@@ -1,17 +1,19 @@
 ﻿
 using Let_sCreateQueueGenerics;
 
-MyQueue<int> queueList = new MyQueue<int>();
+ConsoleLogger consoleLogger = new ConsoleLogger();
 
-MyQueue<int> intQueueList = new IntQueue();
+MyQueue<double> queueList = new MyQueue<double>(consoleLogger);
 
-MyQueue<string> stringQueueList = new StringQueue();
+MyQueue<int> intQueueList = new IntQueue(consoleLogger);
+
+MyQueue<string> stringQueueList = new StringQueue(consoleLogger);
 
 
-queueList.Enqueue(1);
-queueList.Enqueue(2);
-queueList.Enqueue(3);
-queueList.Enqueue(4);
+queueList.Enqueue(1.1);
+queueList.Enqueue(2.2);
+queueList.Enqueue(3.3);
+queueList.Enqueue(4.4);
 queueList.Print();
 
 queueList.Peek();

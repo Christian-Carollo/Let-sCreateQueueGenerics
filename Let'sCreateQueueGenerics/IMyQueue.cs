@@ -11,7 +11,7 @@ namespace Let_sCreateQueueGenerics
     {
         void Enqueue(T element);
         void Dequeue();
-        void Peek();
+        T Peek();
         void Print();
         int Count();
     }
